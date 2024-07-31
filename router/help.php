@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -29,10 +30,38 @@
             </div>
             <div class="p-4">
                 <div class="mb-4">
+                    <button onclick="toggleSection('about')" class="w-full text-left text-gray-700 text-lg font-bold mb-2 focus:outline-none">
+                       About
+                    </button>
+                    
+                    <div id="about" class="hidden">
+                        <hr class="border-gray-300 my-1">
+                        <p class="text-gray-700 text-sm mb-2">The NETGEAR WNAP320 is a high-performance wireless access point designed to provide reliable and secure network connectivity. Ideal for small to medium-sized businesses, it supports advanced features such as multiple SSIDs, VLAN tagging, and robust security protocols.</p>
+                        <p class="text-gray-700 text-sm mb-2">With its user-friendly web interface, you can easily manage and configure the device to meet your networking needs. The WNAP320 is built to ensure seamless wireless coverage and high-speed connectivity, making it a reliable choice for enhancing your network infrastructure.</p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button onclick="toggleSection('requirement')" class="w-full text-left text-gray-700 text-lg font-bold mb-2 focus:outline-none">
+                        System Requirements
+                    </button>
+                    
+                    <div id="requirement" class="hidden">
+                        <hr class="border-gray-300 my-1">
+                        <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
+                            <li>Compatible web browser (e.g., Chrome, Firefox, Safari, Edge)</li>
+                            <li>Network connection (Ethernet or Wireless)</li>
+                            <li>Administrator access to network settings</li>
+                            <li>For initial setup, a PC or laptop with an Ethernet port is recommended</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
                     <button onclick="toggleSection('passwordIssues')" class="w-full text-left text-gray-700 text-lg font-bold mb-2 focus:outline-none">
                         Password Issues
                     </button>
+                    
                     <div id="passwordIssues" class="hidden">
+                        <hr class="border-gray-300 my-1">
                         <p class="text-gray-700 text-sm mb-2">If you have forgotten your password, you can reset it by clicking on the "Forgot Password" link on the login page. Follow the instructions to reset your password.</p>
                         <p class="text-gray-700 text-sm mb-2">Make sure your new password meets the following criteria:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
@@ -47,7 +76,9 @@
                     <button onclick="toggleSection('accountIssues')" class="w-full text-left text-gray-700 text-lg font-bold mb-2 focus:outline-none">
                         Account Issues
                     </button>
+                    
                     <div id="accountIssues" class="hidden">
+                        <hr class="border-gray-300 my-1">
                         <p class="text-gray-700 text-sm mb-2">If you are having trouble accessing your account, please ensure that your username and password are entered correctly. Usernames and passwords are case-sensitive.</p>
                         <p class="text-gray-700 text-sm mb-2">The default username and password for the NETGEAR WNAP320 are:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
@@ -56,8 +87,8 @@
                         </ul>
                         <p class="text-gray-700 text-sm mb-2">If you continue to experience issues, please contact our support team for further assistance. You can reach us at:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
-                            <li>Phone: 1-800-NETGEAR</li>
-                            <li>Email: support@netgear.com</li>
+                            <li>Phone: 1-000-999999</li>
+                            <li>Email: support@fakemail.com</li>
                         </ul>
                     </div>
                 </div>
