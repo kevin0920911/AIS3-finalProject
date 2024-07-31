@@ -32,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         </div>
         <div class="flex items-center space-x-4">
             <a href="#" class="text-white font-bold">Login</a>
-            <a href="#" class="text-white font-bold">Help</a>
+            <a href="help.php" class="text-white font-bold">Help</a>
         </div>
     </div>
     <!-- Main Content -->
