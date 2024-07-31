@@ -3,7 +3,7 @@ $err = "";
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if ($username === 'admin' && $password === 'router123') {
+    if ($username === 'admin' && $password === 'router@123') {
         session_start();
         $_SESSION['username'] = $username;
         header('Location: index.php');
@@ -37,8 +37,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <!-- Main Content -->
     <div class="flex-grow flex items-center justify-center w-full mt-10">
         <div class="w-96 bg-gray-100 border rounded-md p-6 shadow-lg">
-            <div class="bg-gray-200 p-2 rounded-t-md">
-                <span class="text-gray-700 font-bold">Login</span>
+            <div class="bg-gray-200 p-2 rounded-t-md text-center">
+                <span class="text-gray-700 font-bold ">Login</span>
             </div>
             <form method='POST' action='login.php'>
                 <div class="p-4">
@@ -53,6 +53,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="password" id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="mb-6">
+                        <a class="block text-purple-700 text-sm font-bold mb-2" href = 'https://reurl.cc/VM6R2n'>forget password</a>
                     </div>
                     <div class="flex items-center justify-center">
                         <input

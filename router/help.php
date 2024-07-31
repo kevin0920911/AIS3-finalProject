@@ -90,7 +90,7 @@ $is_login = isset($_SESSION['username']);
                         <p class="text-gray-700 text-sm mb-2">The default username and password for the NETGEAR WNAP123 are:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
                             <li>Username: admin</li>
-                            <li>Password: router123</li>
+                            <li>Password: router@123</li>
                         </ul>
                         <p class="text-gray-700 text-sm mb-2">If you continue to experience issues, please contact our support team for further assistance. You can reach us at:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
