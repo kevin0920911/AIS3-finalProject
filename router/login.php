@@ -3,7 +3,7 @@ $err = "";
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if ($username === 'admin' && $password === 'admin') {
+    if ($username === 'admin' && $password === 'router123') {
         session_start();
         $_SESSION['username'] = $username;
         header('Location: index.php');
@@ -15,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <html>
 
 <head>
-    <title>NETGEAR WNAP320 Login</title>
+    <title>NETGEAR WNAP123 Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"></link>
@@ -73,7 +73,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <!-- Footer -->
     <div class="w-full bg-white flex items-center justify-end px-6 py-2 mt-10">
         <div class="text-right">
-            <span class="text-purple-700 text-xl font-bold">WNAP320</span>
+            <span class="text-purple-700 text-xl font-bold">WNAP123</span>
             <span class="text-gray-600 text-sm">ProSafe Wireless N Access Point</span>
         </div>
     </div>

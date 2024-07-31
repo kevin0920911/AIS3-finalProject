@@ -1,9 +1,12 @@
-
+<?php 
+session_start();
+$is_login = isset($_SESSION['username']);
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>NETGEAR WNAP320 Help</title>
+    <title>NETGEAR WNAP123 Help</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +20,11 @@
             <span class="text-white text-sm">Connect with Innovation™</span>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="login.php" class="text-white font-bold">Login</a>
+            <?php
+                if (!$is_login){
+                    echo '<a href="login.php" class="text-white font-bold">Login</a>';
+                }
+            ?>
             <a href="help.php" class="text-white font-bold">Help</a>
         </div>
     </div>
@@ -36,7 +43,7 @@
                     
                     <div id="about" class="hidden">
                         <hr class="border-gray-300 my-1">
-                        <p class="text-gray-700 text-sm mb-2">The NETGEAR WNAP320 is a high-performance wireless access point designed to provide reliable and secure network connectivity. Ideal for small to medium-sized businesses, it supports advanced features such as multiple SSIDs, VLAN tagging, and robust security protocols.</p>
+                        <p class="text-gray-700 text-sm mb-2">The NETGEAR WNAP123 is a high-performance wireless access point designed to provide reliable and secure network connectivity. Ideal for small to medium-sized businesses, it supports advanced features such as multiple SSIDs, VLAN tagging, and robust security protocols.</p>
                         <p class="text-gray-700 text-sm mb-2">With its user-friendly web interface, you can easily manage and configure the device to meet your networking needs. The WNAP320 is built to ensure seamless wireless coverage and high-speed connectivity, making it a reliable choice for enhancing your network infrastructure.</p>
                     </div>
                 </div>
@@ -80,10 +87,10 @@
                     <div id="accountIssues" class="hidden">
                         <hr class="border-gray-300 my-1">
                         <p class="text-gray-700 text-sm mb-2">If you are having trouble accessing your account, please ensure that your username and password are entered correctly. Usernames and passwords are case-sensitive.</p>
-                        <p class="text-gray-700 text-sm mb-2">The default username and password for the NETGEAR WNAP320 are:</p>
+                        <p class="text-gray-700 text-sm mb-2">The default username and password for the NETGEAR WNAP123 are:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
                             <li>Username: admin</li>
-                            <li>Password: admin</li>
+                            <li>Password: router123</li>
                         </ul>
                         <p class="text-gray-700 text-sm mb-2">If you continue to experience issues, please contact our support team for further assistance. You can reach us at:</p>
                         <ul class="list-disc pl-6 text-gray-700 text-sm mb-2">
@@ -99,7 +106,7 @@
     <!-- Footer -->
     <div class="w-full bg-white flex items-center justify-end px-6 py-2 mt-10">
         <div class="text-right">
-            <span class="text-purple-700 text-xl font-bold">WNAP320</span>
+            <span class="text-purple-700 text-xl font-bold">WNAP123</span>
             <span class="text-gray-600 text-sm">ProSafe Wireless N Access Point</span>
         </div>
     </div>

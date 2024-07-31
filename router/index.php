@@ -12,6 +12,19 @@ else{
     echo $_SESSION['username'];
     header('Location: login.php'); 
 }
+
+
+$SSID = "AIS3";
+$password = "123456"; 
+
+if (isset($_POST['ssid']) && isset($_POST['password'])){ 
+    $SSID = $_POST['ssid'];
+    $password = $_POST['password'];
+
+    unset($_POST['ssid']);
+    unset($_POST['passeord']);
+    echo '<script> alert("upload success!!!!")</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,49 +46,45 @@ else{
             </div>
             <ul class="mt-4">
                 <li class="px-4 py-2 hover:bg-gray-700">
-                    <a href="#" class="flex items-center space-x-2">
+                    <a href="index.php" class="flex items-center space-x-2">
                         <span>Configuration</span>
                     </a>
                 </li>
                 <li class="px-4 py-2 hover:bg-gray-700">
-                    <a href="#" class="flex items-center space-x-2">
-                        <span>Monitoring</span>
+                    <a href="https://www.netgear.com/" class="flex items-center space-x-2">
+                        <span>About Me</span>
                     </a>
                 </li>
                 <li class="px-4 py-2 hover:bg-gray-700">
-                    <a href="#" class="flex items-center space-x-2">
-                        <span>Maintenance</span>
+                    <a href="help.php" class="flex items-center space-x-2">
+                        <span>Help</span>
                     </a>
                 </li>
                 <li class="px-4 py-2 hover:bg-gray-700">
-                    <a href="#" class="flex items-center space-x-2">
-                        <span>Support</span>
+                    <a href="https://reurl.cc/VM6R2n" class="flex items-center space-x-2">
+                        <span>More</span>
                     </a>
                 </li>
             </ul>
-            <div class="mt-6">
-                <ul class="ml-4">
-                    <li class="px-4 py-2 text-gray-300">Basic</li>
-                    <li class="px-4 py-2 text-gray-300">General</li>
-                    <li class="px-4 py-2 text-gray-300">Time</li>
-                </ul>
-                <ul class="ml-4 mt-4">
-                    <li class="px-4 py-2 text-gray-300">Advanced</li>
-                </ul>
-            </div>
         </div>
 
         <!-- Main Content -->
         <div class="flex-1 p-6">
             <header class="flex justify-between items-center bg-white p-4 shadow-md">
-                <h2 class="text-2xl font-semibold">WNAP320 ProSafe Wireless N Access Point</h2>
-                <button class="bg-orange-500 text-white px-4 py-2 rounded">LOGOUT</button>
+                <h2 class="text-2xl font-semibold">WNAP123 ProSafe Wireless N Access Point</h2>
+                <form action="logout.php">
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="submit" >
+                            logout
+                        </button>
+                </form>
             </header>
 
             <!--TODO: Remenber add Post request to index php-->
             <div class="mt-6 bg-white p-6 rounded shadow-md">
                 <h3 class="text-xl font-semibold mb-4">General Settings</h3>
-                <form>
+                <form method="POST" action="index.php">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="access-point-name">
                             Access Point Name
@@ -91,7 +100,7 @@ else{
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="ssid" type="text" placeholder="Your SSID">
+                            id="ssid" name= 'ssid' type="text" placeholder="Your SSID" value = <?= $SSID?> >
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
@@ -99,14 +108,12 @@ else{
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password" type="password" placeholder="Your Password">
+                            id="password"  name='password' type="password" placeholder="Your Password" value = <?=$password?>>
                     </div>
                     <div class="flex items-center justify-between">
-                        <button
+                        <input
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="button">
-                            Save
-                        </button>
+                            type="submit" value = "Save">
                     </div>
                 </form>
             </div>
