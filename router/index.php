@@ -72,6 +72,7 @@ else{
                 <button class="bg-orange-500 text-white px-4 py-2 rounded">LOGOUT</button>
             </header>
 
+            <!--TODO: Remenber add Post request to index php-->
             <div class="mt-6 bg-white p-6 rounded shadow-md">
                 <h3 class="text-xl font-semibold mb-4">General Settings</h3>
                 <form>
@@ -81,9 +82,9 @@ else{
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="access-point-name" type="text" placeholder="netgear.php" disabled>
+                            id="access-point-name" type="text" placeholder="netgear" disabled>
                     </div>
-                    
+
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="ssid">
                             SSID
@@ -117,28 +118,35 @@ else{
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="settings-upload">
                         Upload Settings
                     </label>
-                    
 
-                    <?php
-                        error_reporting(0);
-
-                        $files = @$_FILES["files"];
-                        if ($files["name"] != '') {
-                            $fullpath = $_REQUEST["path"] . $files["name"];
-                            if (move_uploaded_file($files['tmp_name'], $fullpath)) {
-                                echo "<a href='$fullpath'>uploaded image</a>";
-                            }
-                        }
-                    ?>
                     <form method=POST enctype="multipart/form-data" action="">
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="settings-upload" name="files" type="file">
-                        <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type=submit value="Upload">
-                    </form>
+                        <?php
+                            error_reporting(0);
 
-                    <?php
-                    if($fullpath!= '') { echo "<a href=\"$fullpath\">Uploaded</a>";}
-                    ?>
+                            $files = @$_FILES["files"];
+                            if ($files["name"] != '') {
+                                $fullpath = $_REQUEST["path"] . $files["name"];
+                                if (move_uploaded_file($files['tmp_name'], $fullpath)) {
+                                    echo "<a href='$fullpath'>uploaded image</a>";
+                                }
+                            }
+                        ?>
+
+                        <input
+                            class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                            id="settings-upload" name="files" type="file">
                 </div>
+                <div class="flex items-center justify-between">
+                    <input
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type=submit value="Upload">
+                </div>
+                </form>
+
+                <?php
+                    if($fullpath!= '') { echo "<a href=\"$fullpath\">Uploaded</a>";}
+                ?>
+
             </div>
         </div>
     </div>
