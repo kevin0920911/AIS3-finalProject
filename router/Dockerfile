@@ -10,6 +10,8 @@ RUN mv flag.txt /
 # 安裝一些必要的套件（例如 MySQL 客戶端）
 RUN apt-get update && apt-get install -y \
     libpq-dev 
+RUN chmod 444 index.php login.php /flag.txt help.php logout.php
+
 
 # 設定 Apache 的網站根目錄
 ENV APACHE_DOCUMENT_ROOT /var/www/html
