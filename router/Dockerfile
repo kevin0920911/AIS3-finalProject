@@ -13,5 +13,6 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html
 # 啟用 Apache 的 rewrite 模組
 RUN a2enmod rewrite
 
+RUN echo 'DirectoryIndex login.php' >> /etc/apache2/apache2.conf
 # 指定容器啟動時要執行的指令
 CMD ["apache2-foreground"]
