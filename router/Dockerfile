@@ -6,8 +6,7 @@ COPY . /var/www/html
 
 # 安裝一些必要的套件（例如 MySQL 客戶端）
 RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql
+    libpq-dev 
 
 # 設定 Apache 的網站根目錄
 ENV APACHE_DOCUMENT_ROOT /var/www/html
