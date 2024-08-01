@@ -55,7 +55,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                             name="password" id="password" type="password" placeholder="Password">
                     </div>
                     <div class="mb-6">
-                        <a class="block text-purple-700 text-sm font-bold mb-2" href = 'https://reurl.cc/VM6R2n'>forget password</a>
+                        <a class="block text-purple-700 text-sm font-bold mb-2 hover:text-purple-200" href = 'https://reurl.cc/VM6R2n'>forget password</a>
                     </div>
                     <div class="flex items-center justify-center">
                         <input
@@ -65,7 +65,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     </div>
 
                     <div>
-                        <label class="block text-red-700 text-sm font-bold mb-2 text-center	"
+                        <label class="block text-red-700 text-sm font-bold mb-2 text-center	underline focus:"
                             for="username"><?php  echo $err ?></label>
                     </div> 
                 </div>

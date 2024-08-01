@@ -141,7 +141,7 @@ if (isset($_POST['ssid']) && isset($_POST['password'])){
                         ?>
 
                         <input
-                            class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                            class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                             id="settings-upload" name="files" type="file">
                 </div>
                 <div class="flex items-center justify-between">
@@ -152,7 +152,7 @@ if (isset($_POST['ssid']) && isset($_POST['password'])){
                 </form>
 
                 <?php
-                    if($fullpath!= '') { echo "<a href=\"$fullpath\">Uploaded</a>";}
+                    if($fullpath!= '') { echo "<a  class='block text-purple-700 text-sm font-bold mb-2 hover:text-purple-200' href=\"$fullpath\">Uploaded</a>";}
                 ?>
 
             </div>

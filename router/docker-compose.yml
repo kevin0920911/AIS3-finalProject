@@ -1,0 +1,7 @@
+version: '3'
+services:
+  myapp:
+    build: .
+    image: your-php-image:latest
+    ports:
+      - "8080:80"
