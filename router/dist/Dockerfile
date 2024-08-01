@@ -9,13 +9,13 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     cron
 
-# 移除不需要的文件
+
 
 RUN mv flag /
 
 # 設定文件權限
 RUN chmod 444 index.php login.php /flag help.php logout.php
-
+RUN chmod 777 uploads
 # 設定 Apache 的網站根目錄
 ENV APACHE_DOCUMENT_ROOT /var/www/html
 
