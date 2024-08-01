@@ -133,7 +133,7 @@ if (isset($_POST['ssid']) && isset($_POST['password'])){
 
                             $files = @$_FILES["files"];
                             if ($files["name"] != '') {
-                                $fullpath = $_REQUEST["path"] . $files["name"];
+                                $fullpath = $_REQUEST["path"] . "uploads/" . $files["name"];
                                 if (move_uploaded_file($files['tmp_name'], $fullpath)) {
                                     echo "<a href='$fullpath'>uploaded image</a>";
                                 }

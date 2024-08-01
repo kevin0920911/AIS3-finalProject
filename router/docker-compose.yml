@@ -5,3 +5,6 @@ services:
     image: your-php-image:latest
     ports:
       - "8080:80"
+    vvolumes:
+      - ./uploads:/var/www/html/uploads:rw
+    read_only: true

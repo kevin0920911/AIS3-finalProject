@@ -4,6 +4,9 @@ FROM php:7.4-apache
 # 複製你的 PHP 檔案到容器內的 /var/www 資料夾
 COPY . /var/www/html
 
+RUN rm -f description.md docker-compose.yml Dockerfile
+RUN mv flag.txt /
+
 # 安裝一些必要的套件（例如 MySQL 客戶端）
 RUN apt-get update && apt-get install -y \
     libpq-dev 
