@@ -7,7 +7,7 @@ COPY . /var/www/html
 RUN rm -f description.md docker-compose.yml Dockerfile
 RUN mv flag.txt /
 
-# 安裝一些必要的套件（例如 MySQL 客戶端）
+# 安裝一些必要的套件
 RUN apt-get update && apt-get install -y \
     libpq-dev 
 RUN chmod 444 index.php login.php /flag.txt help.php logout.php
