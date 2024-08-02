@@ -4,4 +4,4 @@ services:
     build: ../dist
     image: your-php-image:latest
     ports:
-      - "8080:80"
+      - "80001:80"
