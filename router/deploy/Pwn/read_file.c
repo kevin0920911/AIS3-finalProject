@@ -20,6 +20,8 @@ int main(int argc, char **argv, char **envp) {
     int shellcode_size = read(0, shellcode, 0x1000);
 
     scmp_filter_ctx ctx = seccomp_init(SCMP_ACT_KILL);
+    assert(seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(openat), 0) == 0);
+    assert(seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(sendfile), 0) == 0);
     assert(seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(read), 0) == 0);
     assert(seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(write), 0) == 0);
 
