@@ -1,11 +1,12 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y openssh-server gcc
+RUN apt-get update && apt-get install -y openssh-server file
 
-RUN useradd -m hacker && echo 'hacker' | chpasswd
-COPY chroot /root/chroot
-RUN chmod 555 /root/chroot
-RUN chmod u+s /root/chroot
+RUN useradd -m hacker && echo 'hacker:hacker' | chpasswd
+COPY chroot /chroot
+COPY flag /flag
+RUN chmod 555 /chroot
+RUN chmod u+s /chroot
 
 # 設置 SSH 服務
 RUN mkdir /var/run/sshd
