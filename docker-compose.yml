@@ -5,7 +5,7 @@ services:
     image: your-php-image:latest
     ports:
       - "8001:80"
-  # chroot:
-  #   build: chroot/deploy
-  #   ports:
-  #     - "8002:22"
+  chroot:
+    build: chroot/deploy
+    ports:
+      - "8002:22"
