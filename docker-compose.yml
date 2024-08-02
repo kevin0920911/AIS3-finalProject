@@ -1,7 +1,7 @@
 version: '3'
 services:
   myapp:
-    build: ../dist
+    build: router/deploy
     image: your-php-image:latest
     ports:
-      - "80001:80"
+      - "8001:80"
