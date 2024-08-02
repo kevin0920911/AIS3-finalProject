@@ -9,3 +9,7 @@ services:
     build: chroot/deploy
     ports:
       - "8002:22"
+  avatar:
+    build: avatar/deploy
+    ports:
+      - "8003:22"
