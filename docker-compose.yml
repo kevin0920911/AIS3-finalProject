@@ -1,11 +1,11 @@
 version: '3'
 services:
-  # myapp:
-  #   build: router/deploy
-  #   image: your-php-image:latest
-  #   ports:
-  #     - "8001:80"
-  chroot:
-    build: chroot/deploy
+  myapp:
+    build: router/deploy
+    image: your-php-image:latest
     ports:
-      - "8002:22"
+      - "8001:80"
+  # chroot:
+  #   build: chroot/deploy
+  #   ports:
+  #     - "8002:22"

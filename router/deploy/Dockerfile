@@ -8,15 +8,18 @@ COPY flag /
 RUN chown pwn /flag
 # 複製你的檔案到容器內的 /var/www 資料夾
 COPY Web/* /var/www/html
+RUN mkdir /var/www/html/uploads
 RUN chown web /var/www/html/*
 
-COPY Pwn/read_file /home/pwn/read_file
-RUN chown pwn /home/pwn/read_file
+COPY Pwn/read_file.c /home/pwn/read_file.c
+RUN chown pwn /home/pwn/read_file.c
 
 
 # 安裝必要的套件
 RUN apt-get update && apt-get install -y \
-    libpq-dev
+    libpq-dev \
+    gcc \
+    libseccomp-dev
 
 # 設定 Apache 的網站根目錄
 ENV APACHE_DOCUMENT_ROOT /var/www/html
@@ -32,8 +35,9 @@ RUN echo 'DirectoryIndex login.php' >> /etc/apache2/apache2.conf
 USER pwn
 
 RUN chmod 400 /flag
-RUN chmod 555 /home/pwn/read_file
-RUN chmod u+s /home/pwn/read_file
+# RUN chmod 555 /home/pwn/read_file
+# RUN chmod u+s /home/pwn/read_file
+RUN gcc -o /home/pwn/read_file /home/pwn/read_file.c -lseccomp
 
 USER web
 
