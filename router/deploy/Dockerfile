@@ -7,7 +7,7 @@ RUN useradd -d /home/pwn/ -m -p pwn -s /bin/bash pwn
 COPY flag /
 RUN chown pwn:pwn /flag
 # 複製你的檔案到容器內的 /var/www 資料夾
-COPY Web/* /var/www/html
+COPY Web/* /var/www/html/
 RUN mkdir /var/www/html/uploads
 RUN chown web:web /var/www/html/*
 
