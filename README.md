@@ -24,6 +24,6 @@
     ```
 - 連線資訊
     - advator: http://localhost:8003
-    - chroot: ssh hacker@34.80.230.175 -p 8002
+    - chroot: ssh hacker@127.0.0.1 -p 8002
        - password: hacker 
     - router: http://localhost:8003
